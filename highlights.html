@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Highlights | Parikshit Mahajan</title>
+<meta name="description" content="Photos and notes from conferences and talks: ICCFD13 in Milan and IISc Google Day 2026.">
+<meta property="og:title" content="Highlights | Parikshit Mahajan">
+<meta property="og:description" content="Photos and notes from conferences and talks: ICCFD13 in Milan and IISc Google Day 2026.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23070F22'/><circle cx='9' cy='10' r='1.6' fill='%23EEF3FC'/><circle cx='22' cy='7' r='1' fill='%23EEF3FC'/><circle cx='25' cy='20' r='1.8' fill='%23A7EDE4'/><circle cx='13' cy='23' r='1' fill='%23EEF3FC'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href="index.html">Parikshit Mahajan</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="highlights.html" aria-current="page">Highlights</a>
+      <a class="nav-resume" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </div>
+</header>
+<section class="sky-band hero-page">
+  <canvas class="sky" data-density="0.7" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1>Highlights</h1>
+    <p>Moments from taking the research out of the lab: conferences, talks, and the conversations around them.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="page-body page-wide">
+
+    <section class="event" id="google-day">
+      <h2>IISc Google Day 2026</h2>
+      <p class="meta">Indian Institute of Science, Bengaluru, 18 September 2026</p>
+      <p>IISc Google Day is a campus event hosted by Google to connect with the institute's research community. I was selected to present in Track 1: AI/ML and Trustworthy Systems, and opened the track's roundtable as the first of six presenters, with a short technical pitch titled <em>AW-FNO: A Neural Operator for Parametric Partial Differential Equations</em>, followed by Q&amp;A with Google Research and Engineering leads.</p>
+      <div class="photo-grid">
+        <a href="assets/img/highlights/google-day-1.jpg" style="--ar: 3 / 4"><img src="assets/img/highlights/google-day-1.jpg" alt="With the AW-FNO poster at IISc Google Day 2026" loading="lazy"></a>
+        <a href="assets/img/highlights/google-day-2.jpg" style="--ar: 3 / 4"><img src="assets/img/highlights/google-day-2.jpg" alt="With fellow attendees at IISc Google Day 2026" loading="lazy"></a>
+      </div>
+    </section>
+
+    <section class="event" id="iccfd13">
+      <h2>ICCFD13, Milan</h2>
+      <p class="meta">Milan, Italy, July 2026</p>
+      <p>I presented AW-FNO paper at the 13th International Conference on Computational Fluid Dynamics, with travel supported by an IISc GARP grant. The highlight was a conversation with a CFD consultant who had independently arrived at the same idea of fusing Fourier and wavelet neural operators, a good sign that the approach is on the right track.</p>
+      <div class="photo-grid">
+        <a href="assets/img/highlights/iccfd13-1.jpg" style="--ar: 3 / 4"><img src="assets/img/highlights/iccfd13-1.jpg" alt="With the chair of my session at ICCFD13, Politecnico di Milano" loading="lazy"></a>
+        <a href="assets/img/highlights/iccfd13-2.jpg" style="--ar: 4 / 3"><img src="assets/img/highlights/iccfd13-2.jpg" alt="Presenting AW-FNO at ICCFD13, Politecnico di Milano" loading="lazy"></a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <button type="button">Close</button>
+  <img src="" alt="">
+  <p></p>
+</dialog>
+<footer>
+  <div class="wrap">Parikshit Mahajan, IISc Bengaluru</div>
+</footer>
+<script src="assets/js/sky.js"></script>
+<script>
+  (function () {
+    var box = document.getElementById("lightbox");
+    if (!box || !box.showModal) return;
+    var big = box.querySelector("img"), cap = box.querySelector("p");
+    document.querySelectorAll(".photo-grid a").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var small = link.querySelector("img");
+        big.src = link.getAttribute("href");
+        big.alt = small.alt;
+        cap.textContent = small.alt;
+        box.showModal();
+      });
+    });
+    box.addEventListener("click", function (e) {
+      if (e.target === box || e.target.tagName === "BUTTON") box.close();
+    });
+  })();
+</script>
+</body>
+</html>
